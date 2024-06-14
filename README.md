@@ -1,1 +1,1 @@
-# automating-loan-process-using-machine-learning
+# automating ML-loan-process
