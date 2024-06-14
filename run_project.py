@@ -3,8 +3,8 @@ from src.data.data_cleaning import clean_data, save_cleaned_data
 from src.features.feature_engineering import engineer_features
 from src.features.preprocessing import preprocess_data
 from src.models.train_model import train_and_evaluate_models
-from src.app.app import run_streamlit_app
 import joblib
+import subprocess
 
 def run_project():
     """Run the entire loan prediction project end-to-end."""
@@ -32,7 +32,7 @@ def run_project():
     joblib.dump(preprocessing_pipeline, 'models/preprocessing_pipeline.joblib')
 
     # Run the Streamlit app
-    run_streamlit_app()
+    subprocess.run(["streamlit", "run", "src/app/app.py"])
 
 if __name__ == "__main__":
     run_project()
