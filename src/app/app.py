@@ -27,11 +27,7 @@ def run_streamlit_app():
         if feature_name in ['loan_amount', 'interest_rate', 'term', 'credit_score', 'annual_income']:
             input_data[feature_name] = st.number_input(f"{feature_name.replace('_', ' ').capitalize()}", min_value=0, step=1, placeholder=f"Enter {feature_name.replace('_', ' ').capitalize()}")
         else:
-            try:
-                input_data[feature_name] = st.selectbox(f"{feature_name.replace('_', ' ').capitalize()}", options=categorical_encoder.categories_[selected_feature_names.index(feature_name)])
-            except IndexError:
-                st.warning(f"The '{feature_name.replace('_', ' ').capitalize()}' feature was removed during feature selection and is not available for input.")
-                input_data[feature_name] = ''
+            input_data[feature_name] = st.selectbox(f"{feature_name.replace('_', ' ').capitalize()}", options=categorical_encoder.categories_[selected_feature_names.index(feature_name)])
 
     # Create a DataFrame with the input features
     input_data = pd.DataFrame([input_data])
