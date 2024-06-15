@@ -22,14 +22,15 @@ def run_project():
     X_train, X_test, y_train, y_test, preprocessing_pipeline = preprocess_data()
 
     # Perform feature engineering
-    X_train_engineered, X_test_engineered, y_train, y_test, preprocessing_pipeline = engineer_features()
+    X_train_engineered, X_test_engineered, y_train, y_test, preprocessing_pipeline, selected_feature_names = engineer_features()
 
     # Train and evaluate models, select the best one
-    best_model, preprocessing_pipeline = train_and_evaluate_models()
+    best_model, preprocessing_pipeline, selected_feature_names = train_and_evaluate_models()
 
-    # Save the best-performing model
+    # Save the best-performing model, preprocessing pipeline, and selected feature names
     joblib.dump(best_model, 'models/best_performing_model.joblib')
     joblib.dump(preprocessing_pipeline, 'models/preprocessing_pipeline.joblib')
+    joblib.dump(selected_feature_names, 'models/selected_feature_names.joblib')
 
     # Run the Streamlit app
     subprocess.run(["streamlit", "run", "src/app/app.py"])
