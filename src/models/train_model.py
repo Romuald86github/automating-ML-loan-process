@@ -1,3 +1,6 @@
+# src/models/train_model.py
+
+import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -6,18 +9,18 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from sklearn.model_selection import GridSearchCV
 import joblib
-from src.features.feature_engineering import engineer_features
+from src.features.preprocessing import preprocess_data
 
 def train_and_evaluate_models():
     """Train and evaluate multiple models, perform hyperparameter tuning, and return the best-performing model."""
-    X_train, X_test, y_train, y_test, preprocessing_pipeline, selected_feature_names = engineer_features()
+    X_train, X_test, y_train, y_test, preprocessing_pipeline, selected_feature_names = preprocess_data()
 
     models = [
-        LogisticRegression(),
+        LogisticRegression(max_iter=200),
         DecisionTreeClassifier(),
         RandomForestClassifier(),
         GradientBoostingClassifier(),
-        MLPClassifier()
+        MLPClassifier(max_iter=200)
     ]
 
     best_model = None
