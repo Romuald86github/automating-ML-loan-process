@@ -6,6 +6,9 @@ def engineer_features():
     """Perform feature engineering on the loan data."""
     X_train, X_test, y_train, y_test, preprocessing_pipeline, categorical_encoder = preprocess_data()
 
+    # Fit the categorical encoder
+    categorical_encoder.fit(X_train)
+
     # Feature selection using SelectKBest
     selector = SelectKBest(f_classif, k=6)
     X_train_selected = selector.fit_transform(X_train, y_train)
