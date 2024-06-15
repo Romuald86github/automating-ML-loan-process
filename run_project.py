@@ -19,10 +19,10 @@ def run_project():
     save_cleaned_data(cleaned_data)
 
     # Preprocess the data
-    X_train, X_test, y_train, y_test, preprocessing_pipeline = preprocess_data()
+    X_train, X_test, y_train, y_test, preprocessing_pipeline, categorical_encoder = preprocess_data()
 
     # Perform feature engineering
-    X_train_engineered, X_test_engineered, y_train, y_test, preprocessing_pipeline, selected_feature_names = engineer_features()
+    X_train_engineered, X_test_engineered, y_train, y_test, preprocessing_pipeline, categorical_encoder, selected_feature_names = engineer_features()
 
     # Train and evaluate models, select the best one
     best_model, preprocessing_pipeline, selected_feature_names = train_and_evaluate_models()
