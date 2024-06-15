@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
 import joblib
 
 def load_model():
