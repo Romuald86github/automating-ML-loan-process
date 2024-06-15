@@ -7,7 +7,7 @@ def load_and_select_features():
     """Load cleaned data and select specified features."""
     cleaned_data = pd.read_csv('data/processed/cleaned_loan_data.csv')
     
-    selected_features = ['loan_amount', 'term', 'credit_score', 'annual_income', 'home_ownership', 'purpose', 'employment_status', 'interest_rate']
+    selected_features = ['loan_amount', 'term', 'credit_score', 'annual_income', 'home_ownership', 'purpose', 'employment_status']
     X = cleaned_data[selected_features]
     y = cleaned_data['loan_status']
     

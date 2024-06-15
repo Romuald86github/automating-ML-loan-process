@@ -35,7 +35,7 @@ def create_preprocessing_pipeline(selected_features):
 def preprocess_data():
     """Preprocess the loan data using the created pipeline."""
     cleaned_data = clean_data()
-    selected_features = ['loan_amount', 'interest_rate', 'term', 'credit_score', 'annual_income', 'employment_status', 'home_ownership', 'purpose']
+    selected_features = ['loan_amount', 'term', 'credit_score', 'annual_income', 'employment_status', 'home_ownership', 'purpose']
 
     preprocessing_pipeline = create_preprocessing_pipeline(selected_features)
 
