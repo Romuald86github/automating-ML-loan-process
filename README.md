@@ -96,6 +96,14 @@ streamlit run src/app/app.py
 ```
 
 
+# you can also run the entire project by running the following single script:
+
+```
+run_project.py
+```
+
+
+
 Open your web browser and navigate to the URL provided by Streamlit (usually http://localhost:8501) to interact with the loan prediction app.
 
 
