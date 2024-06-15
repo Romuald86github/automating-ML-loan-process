@@ -7,7 +7,10 @@ def load_model():
     best_model = joblib.load('models/best_performing_model.joblib')
     preprocessing_pipeline = joblib.load('models/preprocessing_pipeline.joblib')
     selected_feature_names = joblib.load('models/selected_feature_names.joblib')
-    categorical_encoder = preprocessing_pipeline.named_steps['categorical_encoder']
+
+    # Extract the OneHotEncoder from the ColumnTransformer
+    categorical_encoder = next(step for step in preprocessing_pipeline.named_steps['categorical_encoder'].transformers_ if isinstance(step[1], OneHotEncoder))[1]
+
     return best_model, preprocessing_pipeline, selected_feature_names, categorical_encoder
 
 def run_streamlit_app():
