@@ -18,21 +18,31 @@ Git (optional, for cloning the repository)
 Clone this repository to your local machine using Git (if you have Git installed) or download the ZIP file and extract it
 
 ```
-git clone https://github.com/your_username/automating-ML-loan-process.git
+git clone https://github.com/Romuald86github/automating-ML-loan-process.git
 cd automating-ML-loan-process
 ```
 
 
 ## 2.Set Up Python Virtual Environment:
 
-It's recommended to use a Python virtual environment to manage dependencies.
+It's recommended to use a Python or conda virtual environment to manage dependencies.
 
+### python
 ```
 python -m venv loan
 source loan/bin/activate  # For Linux/Mac
 loan\Scripts\activate     # For Windows
 
 ```
+
+### conda
+```
+# conda init (if you ar not in a conda-like environment, make sure you install anaconda before executing this script)
+conda create -n 'environment_name'
+conda activate 'environment_name'
+```
+
+
 
 
 ## 3.Install Required Packages:
