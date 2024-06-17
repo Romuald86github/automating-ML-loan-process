@@ -37,7 +37,7 @@ loan\Scripts\activate     # For Windows
 
 ### conda
 ```
-# conda init (if you ar not in a conda-like environment, make sure you install anaconda before executing this script)
+conda init # if you ar not in a conda-like environment, make sure you install anaconda before executing this script
 conda create -n 'environment_name'
 conda activate 'environment_name'
 ```
