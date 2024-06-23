@@ -120,7 +120,7 @@ Open your web browser and navigate to the URL provided by Streamlit (usually htt
 # Accessing the Loan Prediction App
 The loan prediction app is accessible via the following link:
 
-[Loan Prediction App]([)](https://automatloanprocess.streamlit.app/)
+(https://automatloanprocess.streamlit.app/)
 
 
 
