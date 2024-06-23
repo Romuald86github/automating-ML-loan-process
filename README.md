@@ -109,7 +109,7 @@ streamlit run src/app/app.py
 # you can also run the entire project by running the following single script:
 
 ```
-run_project.py
+python run_project.py
 ```
 
 
